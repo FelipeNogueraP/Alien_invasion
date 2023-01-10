@@ -17,7 +17,9 @@ class AlienInvasion:
         """Initialize de game, and create resources"""
         pygame.init()
         self.settings = Settings()
-        self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
+        self.screen = pygame.display.set_mode(
+            (self.settings.screen_width, self.settings.screen_height)
+        )
         pygame.display.set_caption("Alien Invasion")
         self.stats = GameStats(self)
         self.sb = Scoreboard(self)
@@ -119,8 +121,10 @@ class AlienInvasion:
         number_aliens_x = available_space_x // (2 * alien_width)
         # Determine the number of rows of aliens that fit on the screen
         ship_height = self.ship.rect.height
-        available_space_y = (self.settings.screen_height - (2 * alien_height) - ship_height)
-        number_rows = available_space_y // (3 * alien_height)
+        available_space_y = (
+            self.settings.screen_height - (2 * alien_height) - ship_height
+        )
+        number_rows = available_space_y // (5 * alien_height)
 
         # Create the full fleet of aliens
         for row_number in range(number_rows):

@@ -9,4 +9,3 @@ class GameStats:
         self.score = 0
         self.high_score = 0
         self.level = 1
-
